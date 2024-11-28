@@ -15,7 +15,6 @@ function ExternalPage() {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#f4f4f4",
         paddingBottom: "60px", // מקום ל-navbar
@@ -26,7 +25,7 @@ function ExternalPage() {
         title="External Content"
         style={{
           width: "100%",
-          height: "100%",
+          height: "93%",
           border: "none",
           borderRadius: "8px",
         }}
