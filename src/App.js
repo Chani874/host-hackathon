@@ -4,17 +4,11 @@ import SecondPage from "./SecondPage";
 import ExternalPage from "./ExternalPage";
 import MainPage from "./MainPage";
 import ImageSlider from "./ImageSlider";
+import DistanceTracker from "./DistanceTracker/DistanceTracker"
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/second" element={<SecondPage />} />
-        <Route path="/external" element={<ExternalPage />} />
-        <Route path="/" element={<MainPage />} /> {/* מסלול ראשי */}
-        <Route path="/images" element={<ImageSlider />} /> {/* קומפוננטה חדשה */}
-      </Routes>
-    </Router>
+    <DistanceTracker></DistanceTracker> 
   );
 }
 

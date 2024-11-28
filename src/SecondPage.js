@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar"; // ייבוא של Navbar
+import DistanceTracker from './DistanceTracker/DistanceTracker'
 
 function SecondPage() {
     const navigate = useNavigate();
+    const [showTracker, setShowTracker] = useState(false);
 
 
     // מערך של אובייקטים, כל אובייקט מכיל את קישור התמונה ו-URL יעד
@@ -35,6 +37,13 @@ function SecondPage() {
         },
     ];
 
+    const handleImageClick = (index, event) => {
+        if (index === 2) {
+            event.preventDefault(); // Prevent the default Link behavior
+            setShowTracker(true);
+        }
+    };
+
     return (
         <div
             style={{
@@ -46,43 +55,47 @@ function SecondPage() {
                 justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "column",
+                position: "relative"
             }}
         >
+            {showTracker && <DistanceTracker />}
+            
             <div
                 style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(2, 1fr)", // 2 תמונות בשורה
-                    gridGap: "20px", // רווח בין התמונות
+                    gridTemplateColumns: "repeat(2, 1fr)",
+                    gridGap: "20px",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "80%", // קובע רוחב כללי לרשת
-                    maxWidth: "1200px", // הגבלת רוחב מרבי לרשת (עוזר כאשר יש מסכים גדולים)
+                    width: "80%",
+                    maxWidth: "1200px",
                 }}
             >
                 {images.map((image, index) => (
                     <Link
                         to={`/external?url=${encodeURIComponent(image.link)}`}
                         key={index}
+                        onClick={(e) => handleImageClick(index, e)}
                         style={{
-                            width: "100%", // כך שהתמונה תתפוס את הרוחב המלא של התיבה שלה
-                            height: "auto", // גובה אוטומטי שמאפשר שמירה על יחס התמונות
+                            width: "100%",
+                            height: "auto",
                         }}
                     >
                         <img
                             src={image.imgUrl}
                             alt={`Random ${index}`}
                             style={{
-                                width: "100%", // התמונה ממלאת את רוחב הבלוק
-                                height: "auto", // שמירה על יחס המידות
-                                objectFit: "cover", // ממלאת את הבלוק בצורה אופטימלית
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
                                 borderRadius: "8px",
-                                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // צל עדין לתמונה
+                                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                             }}
                         />
                     </Link>
                 ))}
             </div>
-            <Navbar /> {/* הוספת Navbar */}
+            <Navbar />
         </div>
     );
 }
