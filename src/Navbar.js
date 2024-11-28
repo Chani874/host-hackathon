@@ -21,7 +21,7 @@ function Navbar() {
       }}
     >
       <img
-        src="https://example.com/your-logo.png" // הקישור לתמונה הקטנה
+        src="pages/Icon.png" // הקישור לתמונה הקטנה
         alt="Logo"
         style={{
           width: "50px", // הגודל של התמונה
