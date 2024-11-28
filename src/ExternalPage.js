@@ -1,46 +1,37 @@
+
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import Navbar from "./Navbar"; // ייבוא של Navbar
 
 function ExternalPage() {
-  const navigate = useNavigate();
-
-  // לקבל את ה-URL מהחיפוש או מהפרופס (אפשר גם לשלוח כ-URL פרמטר)
-  const urlParams = new URLSearchParams(window.location.search);
-  const url = urlParams.get("url");
+  // שימוש ב-URL parameters (הקישור ששולחים לך)
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const externalUrl = params.get("url");
 
   return (
     <div
       style={{
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
         backgroundColor: "#f4f4f4",
+        paddingBottom: "60px", // מקום ל-navbar
       }}
     >
       <iframe
-        src={url}
-        width="80%"
-        height="80%"
+        src={externalUrl}
         title="External Content"
-        style={{ border: "none", borderRadius: "8px" }}
-      ></iframe>
-      <button
-        onClick={() => navigate("/images")}
         style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          fontSize: "16px",
-          backgroundColor: "#007BFF",
-          color: "white",
+          width: "100%",
+          height: "100%",
           border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
+          borderRadius: "8px",
         }}
-      >
-        חזור לתפריט
-      </button>
+      />
+      <Navbar /> {/* הוספת Navbar */}
     </div>
   );
 }
