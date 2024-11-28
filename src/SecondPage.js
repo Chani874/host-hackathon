@@ -10,27 +10,27 @@ function SecondPage() {
     // מערך של אובייקטים, כל אובייקט מכיל את קישור התמונה ו-URL יעד
     const images = [
         {
-            imgUrl: "pages/10.png",
+            imgUrl: "pages/iconCherum.png",
             link: "https://NatiShenker.github.io/face"
         },
         {
-            imgUrl: "pages/10.png",
-            link: "https://natitok.github.io/digitalForm/"
-        },
-        {
-            imgUrl: "pages/10.png",
-            link: "https://www.example.com/3"
-        },
-        {
-            imgUrl: "pages/10.png",
+            imgUrl: "pages/iconAzik.png",
             link: "./images"
         },
         {
-            imgUrl: "pages/10.png",
-            link: "https://www.example.com/5"
+            imgUrl: "pages/iconSikun.png",
+            link: "https://natitok.github.io/digitalForm/"
         },
         {
-            imgUrl: "pages/10.png",
+            imgUrl: "pages/iconEranut.png",
+            link: "https://NatiShenker.github.io/face"
+        },
+        {
+            imgUrl: "pages/iconTofes.png",
+            link: "https://natitok.github.io/digitalForm/"
+        },
+        {
+            imgUrl: "pages/iconProfil.png",
             link: "https://www.example.com/6"
         },
     ];
@@ -39,7 +39,7 @@ function SecondPage() {
         <div
             style={{
                 height: "100vh",
-                backgroundImage: `url("pages/02.png")`,
+                backgroundImage: `url("pages/FrameLivuyAsir.png")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 display: "flex",

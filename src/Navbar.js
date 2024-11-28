@@ -10,9 +10,9 @@ function Navbar() {
       style={{
         position: "fixed", // התמונה תהיה בתחתית המסך
         bottom: 0,
-        left: 0,
+        // left: 0,
         width: "100%", // תמלא את הרוחב של המסך
-        backgroundColor: "#333", // צבע רקע כהה
+        // backgroundColor: "#333", // צבע רקע כהה
         padding: "10px 20px",
         display: "flex",
         justifyContent: "center", // ניישר את התמונה במרכז
